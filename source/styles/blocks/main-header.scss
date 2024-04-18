@@ -1,0 +1,21 @@
+.main-header {
+  padding-top: 18px;
+
+  @media (min-width: $desktop-width) {
+    padding-top: 26px;
+  }
+}
+
+.main-header__logo {
+  width: 213px;
+  height: 32px;
+}
+
+.main-header__logo-image {
+  display: block;
+
+  @media (min-width: $desktop-width) {
+    width: 245px;
+    height: 36px;
+  }
+}

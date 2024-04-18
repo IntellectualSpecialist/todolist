@@ -1,0 +1,28 @@
+.participants__wrapper {
+  position: relative;
+}
+
+.participants__title {
+  max-width: 335px;
+  margin-bottom: 40px;
+
+  @media (min-width: $desktop-width) {
+    max-width: 806px;
+    margin-bottom: 60px;
+  }
+}
+
+.participants__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.participants__toggles {
+  @media (min-width: $desktop-width) {
+    position: absolute;
+    top: 6px;
+    right: 72px;
+  }
+}

@@ -1,0 +1,25 @@
+/* GLOBAL */
+@import "./global/variables.scss";
+@import "./global/fonts.scss";
+@import "./global/mixins.scss";
+@import "./global/common.scss";
+@import "./global/container.scss";
+@import "./global/visually-hidden.scss";
+
+/* BLOCKS */
+@import "./blocks/title-large.scss";
+@import "./blocks/button.scss";
+@import "./blocks/running-line.scss";
+@import "./blocks/title-middle.scss";
+@import "./blocks/info.scss";
+@import "./blocks/text-accent.scss";
+@import "./blocks/slider.scss";
+@import "./blocks/participant-card.scss";
+@import "./blocks/page.scss";
+@import "./blocks/main-header.scss";
+@import "./blocks/main-content.scss";
+@import "./blocks/hero.scss";
+@import "./blocks/announcement.scss";
+@import "./blocks/transformation.scss";
+@import "./blocks/participants.scss";
+@import "./blocks/main-footer.scss";

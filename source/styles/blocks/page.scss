@@ -1,0 +1,22 @@
+.page {
+  height: 100%;
+}
+
+.page__body {
+  display: flex;
+  flex-direction: column;
+  min-width: 375px;
+  min-height: 100%;
+}
+
+.page__main-header {
+  margin-bottom: 40px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 62px;
+  }
+}
+
+.page__main-content {
+  flex-grow: 1;
+}

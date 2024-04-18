@@ -1,0 +1,35 @@
+.title-middle {
+  margin: 0;
+  font-family: $secondary-font;
+  font-size: 28px;
+  line-height: 38px;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  @media (min-width: $desktop-width) {
+    font-size: 36px;
+    line-height: 49px;
+  }
+}
+
+.title-middle__top {
+  display: block;
+  margin-bottom: 261px;
+
+  @media (min-width: $desktop-width) {
+    display: inline;
+  }
+}
+
+.title-middle__bottom {
+  display: block;
+
+  @media (min-width: $desktop-width) {
+    display: inline;
+  }
+}
+
+.title-middle__accent {
+  font-weight: 700;
+  color: $accent-color;
+}

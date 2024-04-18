@@ -1,0 +1,25 @@
+.main-footer {
+  margin-top: 93px;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba($primary-text-color, 0.6);
+  background-color: $quinary-bg-color;
+  overflow: hidden;
+
+  @media (min-width: $desktop-width) {
+    margin-top: 140px;
+  }
+}
+
+.main-footer__wrapper {
+  padding-top: 40px;
+  padding-bottom: 60px;
+
+  @media (min-width: $desktop-width) {
+    padding-bottom: 72px;
+  }
+}
+
+.main-footer__disclaimer {
+  margin: 0;
+}

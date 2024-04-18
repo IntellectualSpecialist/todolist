@@ -1,0 +1,23 @@
+.main-content__hero {
+  margin-bottom: 48px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 80px;
+  }
+}
+
+.main-content__announcement {
+  margin-bottom: 120px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 146px;
+  }
+}
+
+.main-content__transformation {
+  margin-bottom: 120px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 200px;
+  }
+}

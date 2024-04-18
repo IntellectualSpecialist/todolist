@@ -1,0 +1,37 @@
+.participant-card__info {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.participant-card__name {
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 600;
+}
+
+.participant-card__grade {
+  margin: 0;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba($primary-text-color, 0.6);
+}
+
+.participant-card__image-container {
+  width: fit-content;
+  margin: 0 auto 28px;
+}
+
+.participant-card__image {
+  display: block;
+  border-radius: 50%;
+}
+
+.participant-card__more {
+  margin: 20px auto 0;
+
+  @media (min-width: $desktop-width) {
+    margin-top: 18px;
+  }
+}
