@@ -31,4 +31,8 @@
       background-color: $active-color;
     }
   }
+
+  &--clear {
+    background-color: $done-color;
+  }
 }
