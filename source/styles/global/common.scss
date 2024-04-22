@@ -7,50 +7,8 @@
 body {
   margin: 0;
   font-family: $primary-font;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: $main-font-size;
+  line-height: auto;
   color: $primary-text-color;
-  background-image:
-    image-set(
-      url("../../images/background-collage@2x.webp") type("image/webp") 2x,
-      url("../../images/background-collage@1x.webp") type("image/webp") 1x,
-      url("../../images/background-collage@2x.png") type("image/png") 2x,
-      url("../../images/background-collage@1x.png") type("image/png") 1x
-    ),
-    image-set(
-      url("../../images/pattern-mobile@2x.webp") type("image/webp") 2x,
-      url("../../images/pattern-mobile@1x.webp") type("image/webp") 1x,
-      url("../../images/pattern-mobile@2x.png") type("image/png") 2x,
-      url("../../images/pattern-mobile@1x.png") type("image/png") 1x
-    ),
-    linear-gradient($tertiary-bg-color, $tertiary-bg-color 812px, transparent 812px, transparent);
-  background-repeat: no-repeat, repeat-x;
-  background-size: 900px 812px, auto;
-  background-position: right -122px top;
-
-  @media (min-width: $desktop-width) {
-    background-image:
-      image-set(
-        url("../../images/background-collage-desktop@2x.webp") type("image/webp") 2x,
-        url("../../images/background-collage-desktop@1x.webp") type("image/webp") 1x,
-        url("../../images/background-collage-desktop@2x.jpg") type("image/jpeg") 2x,
-        url("../../images/background-collage-desktop@1x.jpg") type("image/jpeg") 1x
-      ),
-      image-set(
-        url("../../images/pattern-mobile@2x.webp") type("image/webp") 2x,
-        url("../../images/pattern-mobile@1x.webp") type("image/webp") 1x,
-        url("../../images/pattern-mobile@2x.png") type("image/png") 2x,
-        url("../../images/pattern-mobile@1x.png") type("image/png") 1x
-      ),
-      linear-gradient($tertiary-bg-color, $tertiary-bg-color 700px, transparent 700px, transparent);
-    background-size: 1920px 881px, auto, auto;
-    background-repeat: no-repeat, repeat-x;
-    background-position: top -123px center;
-  }
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
+  background-color: $primary-bg-color;
 }

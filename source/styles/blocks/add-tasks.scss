@@ -1,0 +1,55 @@
+.add-tasks {
+  padding-bottom: 59px;
+}
+
+.add-tasks__form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.add-tasks__field {
+  width: 381px;
+  padding: 11px 15px 10px;
+  margin-right: 10px;
+  font-size: $main-font-size;
+  color: $primary-text-color;
+  background: transparent;
+  border: 1px solid $accent-color;
+  border-radius: 10px;
+
+  &::placeholder {
+    color: $placeholder-color;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.add-tasks__button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: $accent-color;
+  background-image: url("/images/icons/stack.svg#plus-icon");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 24px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:focus,
+  &:active {
+    opacity: 0.3;
+  }
+}
