@@ -3,8 +3,9 @@
 @import "./global/fonts.scss";
 @import "./global/common.scss";
 @import "./global/visually-hidden.scss";
+@import "./global/hidden.scss";
 
-// /* BLOCKS */
+/* BLOCKS */
 @import "./blocks/app-wrapper.scss";
 @import "./blocks/add-tasks.scss";
 @import "./blocks/title.scss";
@@ -14,3 +15,4 @@
 @import "./blocks/task-card.scss";
 @import "./blocks/button-icon.scss";
 @import "./blocks/done.scss";
+@import "./blocks/placeholder-text.scss";
