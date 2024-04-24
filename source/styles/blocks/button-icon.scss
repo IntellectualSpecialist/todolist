@@ -17,7 +17,7 @@
 
   &--check {
     appearance: none;
-    mask-image: url("/images/icons/stack.svg#check-icon");
+    mask-image: url("../../images/icons/stack.svg#check-icon");
 
     &:checked,
     &:disabled {
@@ -26,7 +26,7 @@
   }
 
   &--bin {
-    mask-image: url("/images/icons/stack.svg#bin-icon");
+    mask-image: url("../../images/icons/stack.svg#bin-icon");
 
     &:active,
     &:disabled {
