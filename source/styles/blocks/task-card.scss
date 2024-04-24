@@ -3,12 +3,10 @@
   padding: 22px 20px 23px 21px;
   background-color: $primary-bg-color;
   border-radius: 10px;
+  transition: 0.1s linear 0.3s;
 
   &--todo {
-    .task-card__label {
-      display: flex;
-      width: 352px;
-    }
+    // transform: translateX(100%);
 
     .task-card__text {
       width: 315px;
@@ -28,7 +26,42 @@
     }
   }
 
+  &--animation {
+    transform: translateX(-100%);
+  }
+
   &--done {
     color: $done-color;
+  }
+}
+
+.task-card__label {
+  display: flex;
+  width: 352px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 0;
+    height: 1px;
+    background-color: $done-color;
+    transition: 0.3s linear;
+  }
+
+  .task-card__text {
+    transition: 0.3s linear;
+  }
+
+  &--effect {
+    position: relative;
+
+    &::before {
+      width: 90%;
+    }
+
+    .task-card__text {
+      color: $done-color;
+    }
   }
 }

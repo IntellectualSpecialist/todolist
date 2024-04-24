@@ -3,7 +3,8 @@
   padding: 0;
   list-style: none;
   max-height: 348px;
-  overflow: overlay;
+  overflow-x: hidden;
+  overflow-y: auto;
 
   li {
     margin-bottom: 16px;

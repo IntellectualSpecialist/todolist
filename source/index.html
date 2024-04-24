@@ -8,7 +8,7 @@
   </head>
   <body class="page__body">
     <main class="main-content">
-      <h1 class="visually-hidden">Todolist</h1>
+      <h1 class="main-content__title">Todolist</h1>
       <div class="app-wrapper">
         <section class="add-tasks">
           <h2 class="visually-hidden">Добавить задачу</h2>
@@ -18,14 +18,15 @@
               <span class="visually-hidden">Добавить задачу</span>
             </button>
           </form>
+          <!-- <p class="add-tasks__error">Нельзя добавить пустую задачу!</p> -->
         </section>
         <section class="tasks">
           <h2 class="tasks__title title">Tasks to do -
-            <output class="tasks__count">4</output>
+            <output class="tasks__count">0</output>
           </h2>
-          <p class="placeholder-text hidden">Задач нет</p>
+          <p class="placeholder-text" id="tasks-placeholder">Задач нет</p>
           <ul class="tasks__list list">
-            <li class="tasks__item task-card task-card--todo">
+            <!-- <li class="tasks__item task-card task-card--todo">
               <label class="task-card__label">
                 <input class="task-card__text" type="text" value="To study React fundamentals">
                 <input class="task-card__field button-icon button-icon--check" type="checkbox">
@@ -60,26 +61,46 @@
               <button class="task-card__delete button-icon button-icon--bin" type="button">
                 <span class="visually-hidden">Удалить</span>
               </button>
-            </li>
+            </li> -->
           </ul>
         </section>
         <section class="done">
           <div class="done__header">
             <h2 class="done__title title">Done -
-              <output class="done__count">4</output>
+              <output class="done__count">0</output>
             </h2>
             <button class="done__delete button-icon button-icon--bin button-icon--clear" type="button">
               <span class="visually-hidden">Удалить завершенные задачи</span>
             </button>
           </div>
-          <p class="placeholder-text hidden">Выполненных задач нет</p>
+          <p class="placeholder-text" id="done-placeholder">Выполненных задач нет</p>
           <ul class="done__list list">
-            <li class="done__item task-card task-card--done">
+            <!-- <li class="done__item task-card task-card--done">
               <del class="task-card__text">To study React fundamentals</del>
-            </li>
+            </li> -->
           </ul>
         </section>
       </div>
     </main>
+    <template id="new-task">
+      <li class="tasks__item task-card task-card--todo">
+        <label class="task-card__label">
+          <input class="task-card__text" type="text" value="To study React fundamentals" required>
+          <input class="task-card__field button-icon button-icon--check" type="checkbox">
+        </label>
+        <button class="task-card__delete button-icon button-icon--bin" type="button">
+          <span class="visually-hidden">Удалить</span>
+        </button>
+      </li>
+    </template>
+    <template id="done-task">
+      <li class="done__item task-card task-card--done">
+        <del class="task-card__text">To study React fundamentals</del>
+      </li>
+    </template>
+    <template id="error-message">
+      <p class="add-tasks__error">Нельзя добавить пустую задачу!</p>
+    </template>
+    <script src="scripts/main.js" type="module"></script>
   </body>
 </html>

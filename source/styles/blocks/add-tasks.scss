@@ -1,4 +1,5 @@
 .add-tasks {
+  position: relative;
   padding-bottom: 59px;
 }
 
@@ -52,4 +53,11 @@
   &:active {
     opacity: 0.3;
   }
+}
+
+.add-tasks__error {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  color: #ff0000;
 }

@@ -19,7 +19,8 @@
     appearance: none;
     mask-image: url("/images/icons/stack.svg#check-icon");
 
-    &:checked {
+    &:checked,
+    &:disabled {
       background-color: $active-color;
     }
   }
@@ -27,7 +28,8 @@
   &--bin {
     mask-image: url("/images/icons/stack.svg#bin-icon");
 
-    &:active {
+    &:active,
+    &:disabled {
       background-color: $active-color;
     }
   }
