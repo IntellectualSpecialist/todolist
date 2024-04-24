@@ -12,8 +12,9 @@
       <div class="app-wrapper">
         <section class="add-tasks">
           <h2 class="visually-hidden">Добавить задачу</h2>
-          <form class="add-tasks__form" id="add-task" method="post" action="" autocomplete="off">
-            <input class="add-tasks__field" type="text" placeholder="Add a new task">
+          <form class="add-tasks__form" id="add-task" method="post" action="https://31.javascript.htmlacademy.pro/kekstagram" autocomplete="off">
+            <label class="visually-hidden" for="task-field">Введите текст задачи</label>
+            <input class="add-tasks__field" type="text" name="field" id="task-field" placeholder="Add a new task">
             <button class="add-tasks__button" type="submit">
               <span class="visually-hidden">Добавить задачу</span>
             </button>
@@ -26,42 +27,6 @@
           </h2>
           <p class="placeholder-text" id="tasks-placeholder">Задач нет</p>
           <ul class="tasks__list list">
-            <!-- <li class="tasks__item task-card task-card--todo">
-              <label class="task-card__label">
-                <input class="task-card__text" type="text" value="To study React fundamentals">
-                <input class="task-card__field button-icon button-icon--check" type="checkbox">
-              </label>
-              <button class="task-card__delete button-icon button-icon--bin" type="button">
-                <span class="visually-hidden">Удалить</span>
-              </button>
-            </li>
-            <li class="tasks__item task-card task-card--todo">
-              <label class="task-card__label">
-                <input class="task-card__text" type="text" value="To study React fundamentals">
-                <input class="task-card__field button-icon button-icon--check" type="checkbox">
-              </label>
-              <button class="task-card__delete button-icon button-icon--bin" type="button">
-                <span class="visually-hidden">Удалить</span>
-              </button>
-            </li>
-            <li class="tasks__item task-card task-card--todo">
-              <label class="task-card__label">
-                <input class="task-card__text" type="text" value="To study React fundamentals">
-                <input class="task-card__field button-icon button-icon--check" type="checkbox">
-              </label>
-              <button class="task-card__delete button-icon button-icon--bin" type="button">
-                <span class="visually-hidden">Удалить</span>
-              </button>
-            </li>
-            <li class="tasks__item task-card task-card--todo">
-              <label class="task-card__label">
-                <input class="task-card__text" type="text" value="To study React fundamentals">
-                <input class="task-card__field button-icon button-icon--check" type="checkbox">
-              </label>
-              <button class="task-card__delete button-icon button-icon--bin" type="button">
-                <span class="visually-hidden">Удалить</span>
-              </button>
-            </li> -->
           </ul>
         </section>
         <section class="done">
@@ -75,30 +40,28 @@
           </div>
           <p class="placeholder-text" id="done-placeholder">Выполненных задач нет</p>
           <ul class="done__list list">
-            <!-- <li class="done__item task-card task-card--done">
-              <del class="task-card__text">To study React fundamentals</del>
-            </li> -->
           </ul>
         </section>
       </div>
     </main>
-    <template id="new-task">
+    <!-- lint:bem-disable -->
+    <template class="tasks" id="new-task">
       <li class="tasks__item task-card task-card--todo">
         <label class="task-card__label">
-          <input class="task-card__text" type="text" value="To study React fundamentals" required>
-          <input class="task-card__field button-icon button-icon--check" type="checkbox">
+          <input class="task-card__text" type="text" name="input" value="To study React fundamentals" required>
+          <input class="task-card__field button-icon button-icon--check" name="check" type="checkbox">
         </label>
         <button class="task-card__delete button-icon button-icon--bin" type="button">
           <span class="visually-hidden">Удалить</span>
         </button>
       </li>
     </template>
-    <template id="done-task">
+    <template class="done" id="done-task">
       <li class="done__item task-card task-card--done">
         <del class="task-card__text">To study React fundamentals</del>
       </li>
     </template>
-    <template id="error-message">
+    <template class="add-tasks" id="error-message">
       <p class="add-tasks__error">Нельзя добавить пустую задачу!</p>
     </template>
     <script src="scripts/main.js" type="module"></script>
