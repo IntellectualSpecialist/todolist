@@ -34,7 +34,6 @@ const onCheckChange = (evt) => {
     changeTaskStatus(currentTask);
     showPlaceholder();
   }, RENDER_SHOWTIME);
-
 };
 
 export {onCheckChange};
