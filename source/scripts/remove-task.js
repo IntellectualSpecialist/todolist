@@ -27,7 +27,9 @@ const onRemoveButtonClick = (evt) => {
   const currentTask = evt.target.closest('.tasks__item');
   evt.target.disabled = true;
   removeTask(currentTask);
-  showPlaceholder();
+  setTimeout(() => {
+    showPlaceholder();
+  }, RENDER_SHOWTIME);
 };
 
 export {onRemoveButtonClick, removeTask};
