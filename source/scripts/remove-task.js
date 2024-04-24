@@ -2,7 +2,7 @@ import { getTasks } from './utils.js';
 import {renderTasks} from './render-all-tasks.js';
 
 const RENDER_SHOWTIME = 1000;
-const tasksPlaceholderElement = document.querySelector('#done-placeholder');
+const tasksPlaceholderElement = document.querySelector('#tasks-placeholder');
 
 const showPlaceholder = () => {
   const tasksElements = document.querySelectorAll('.tasks__item');
@@ -19,7 +19,6 @@ const removeTask = (taskElement) => {
 
   setTimeout(() => {
     renderTasks(tasks);
-    showPlaceholder();
   }, RENDER_SHOWTIME);
 
 };
@@ -28,6 +27,7 @@ const onRemoveButtonClick = (evt) => {
   const currentTask = evt.target.closest('.tasks__item');
   evt.target.disabled = true;
   removeTask(currentTask);
+  showPlaceholder();
 };
 
 export {onRemoveButtonClick, removeTask};
