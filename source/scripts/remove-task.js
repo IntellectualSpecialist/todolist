@@ -1,4 +1,4 @@
-import { getTasks } from './utils.js';
+import { getTasks, saveTasks } from './utils.js';
 import {renderTasks} from './render-all-tasks.js';
 
 const RENDER_SHOWTIME = 1000;
@@ -15,7 +15,7 @@ const removeTask = (taskElement) => {
   taskElement.classList.add('task-card--animation');
   let tasks = getTasks();
   tasks = tasks.filter((element) => element.id !== parseInt(taskElement.dataset.id, 10));
-  localStorage.setItem('tasks', JSON.stringify(tasks));
+  saveTasks(tasks);
 
   setTimeout(() => {
     renderTasks(tasks);
@@ -27,6 +27,7 @@ const onRemoveButtonClick = (evt) => {
   const currentTask = evt.target.closest('.tasks__item');
   evt.target.disabled = true;
   removeTask(currentTask);
+
   setTimeout(() => {
     showPlaceholder();
   }, RENDER_SHOWTIME);

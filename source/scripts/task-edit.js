@@ -1,4 +1,4 @@
-import { getTasks } from './utils.js';
+import { getTasks, saveTasks } from './utils.js';
 import { renderTasks } from './render-all-tasks.js';
 
 const onInputChange = (evt) => {
@@ -10,7 +10,7 @@ const onInputChange = (evt) => {
       element.name = evt.target.value;
     }
   });
-  localStorage.setItem('tasks', JSON.stringify(tasks));
+  saveTasks(tasks);
   renderTasks(tasks);
 };
 

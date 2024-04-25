@@ -32,7 +32,6 @@ const renderTasks = (tasks) => {
       taskElement.dataset.id = task.id;
 
       tasksFragment.append(taskElement);
-      tasksListElement.append(tasksFragment);
 
       tasksPlaceholderElement.classList.add('hidden');
       buttonCheck.addEventListener('change', onCheckChange);
@@ -51,6 +50,9 @@ const renderTasks = (tasks) => {
       doneTaskCount += 1;
     }
   });
+  tasksListElement.append(tasksFragment);
+  doneListElement.append(doneFragment);
+
   tasksCountElement.textContent = taskCount;
   doneCountElement.textContent = doneTaskCount;
 };

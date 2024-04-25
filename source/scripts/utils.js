@@ -1,3 +1,5 @@
+import {renderTasks} from './render-all-tasks';
+
 const ALERT_SHOWTIME = 5000;
 const errorTemplateElement = document.querySelector('#error-message').content.querySelector('.add-tasks__error');
 const errorFragment = document.createDocumentFragment();
@@ -14,6 +16,15 @@ const generateId = () => {
 function getTasks() {
   return JSON.parse(localStorage.getItem('tasks')) || [];
 }
+
+const saveTasks = (tasks) => {
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+};
+
+const loadTasks = () => {
+  const tasks = getTasks();
+  renderTasks(tasks);
+};
 
 const createTask = (taskName, boolean) => ({
   id: generateId(),
@@ -32,4 +43,4 @@ const showAlert = () => {
   }, ALERT_SHOWTIME);
 };
 
-export {getTasks, createTask, showAlert};
+export {getTasks, createTask, showAlert, saveTasks, loadTasks};

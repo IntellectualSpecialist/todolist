@@ -1,4 +1,4 @@
-import { getTasks } from './utils.js';
+import { getTasks, saveTasks } from './utils.js';
 import { renderTasks } from './render-all-tasks.js';
 
 const RENDER_SHOWTIME = 1000;
@@ -18,7 +18,7 @@ const changeTaskStatus = (task) => {
       element.done = true;
     }
   });
-  localStorage.setItem('tasks', JSON.stringify(tasks));
+  saveTasks(tasks);
   renderTasks(tasks);
 };
 

@@ -1,4 +1,4 @@
-import { createTask, getTasks, showAlert } from './utils.js';
+import { createTask, getTasks, showAlert, saveTasks } from './utils.js';
 import { renderTasks } from './render-all-tasks.js';
 
 const addTaskFormElement = document.querySelector('.add-tasks__form');
@@ -10,7 +10,7 @@ const addTask = (taskText) => {
     const newTask = createTask(taskText, false);
 
     tasks.push(newTask);
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    saveTasks(tasks);
 
     renderTasks(tasks);
   } else {
