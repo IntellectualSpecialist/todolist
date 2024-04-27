@@ -24,9 +24,9 @@ const renderTasks = (tasks) => {
   tasks.forEach((task) => {
     if (task.done === false) {
       const taskElement = taskTemplateElement.cloneNode(true);
-      const buttonCheck = taskElement.querySelector('.button-icon--check');
-      const buttonRemove = taskElement.querySelector('.button-icon--bin');
-      const inputTask = taskElement.querySelector('.task-card__text');
+      const buttonCheckElement = taskElement.querySelector('.button-icon--check');
+      const buttonRemoveElement = taskElement.querySelector('.button-icon--bin');
+      const inputTaskElement = taskElement.querySelector('.task-card__text');
 
       taskElement.querySelector('.task-card__text').value = task.name;
       taskElement.dataset.id = task.id;
@@ -34,9 +34,9 @@ const renderTasks = (tasks) => {
       tasksFragment.append(taskElement);
 
       tasksPlaceholderElement.classList.add('hidden');
-      buttonCheck.addEventListener('change', onCheckChange);
-      buttonRemove.addEventListener('click', onRemoveButtonClick);
-      inputTask.addEventListener('change', onInputChange);
+      buttonCheckElement.addEventListener('change', onCheckChange);
+      buttonRemoveElement.addEventListener('click', onRemoveButtonClick);
+      inputTaskElement.addEventListener('change', onInputChange);
       taskCount += 1;
     } else {
       const doneElement = doneTemplateElement.cloneNode(true);
@@ -44,7 +44,6 @@ const renderTasks = (tasks) => {
 
       doneElement.dataset.id = task.id;
       doneFragment.append(doneElement);
-      doneListElement.append(doneFragment);
 
       donePlaceholderElement.classList.add('hidden');
       doneTaskCount += 1;

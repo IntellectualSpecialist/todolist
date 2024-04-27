@@ -4,6 +4,7 @@ const ALERT_SHOWTIME = 5000;
 const errorTemplateElement = document.querySelector('#error-message').content.querySelector('.add-tasks__error');
 const errorFragment = document.createDocumentFragment();
 const addTaskElement = document.querySelector('.add-tasks');
+const tasksPlaceholderElement = document.querySelector('#tasks-placeholder');
 
 let id = JSON.parse(localStorage.getItem('id')) || 0;
 
@@ -13,9 +14,7 @@ const generateId = () => {
   return id;
 };
 
-function getTasks() {
-  return JSON.parse(localStorage.getItem('tasks')) || [];
-}
+const getTasks = () => JSON.parse(localStorage.getItem('tasks')) || [];
 
 const saveTasks = (tasks) => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -43,4 +42,11 @@ const showAlert = () => {
   }, ALERT_SHOWTIME);
 };
 
-export {getTasks, createTask, showAlert, saveTasks, loadTasks};
+const showTasksPlaceholder = () => {
+  const tasksElements = document.querySelectorAll('.tasks__item');
+  if (tasksElements.length === 0) {
+    tasksPlaceholderElement.classList.remove('hidden');
+  }
+};
+
+export {getTasks, createTask, showAlert, saveTasks, loadTasks, showTasksPlaceholder};

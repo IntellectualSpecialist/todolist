@@ -1,18 +1,26 @@
 import {removeTask} from './remove-task';
-const PLACEHOLDER_SHOWTIME = 1000;
+const REMOVE_SHOWTIME = 1000;
 
 const donePlaceholderElement = document.querySelector('#done-placeholder');
 const clearButtonElement = document.querySelector('.button-icon--clear');
 
-const onClearButtonClick = () => {
+const clearDone = () => {
   const doneTasks = document.querySelectorAll('.done__item');
+
   doneTasks.forEach((doneTask) => {
     doneTask.classList.add('task-card--animation');
-    removeTask(doneTask);
+    setTimeout(() => {
+      removeTask(doneTask);
+    }, REMOVE_SHOWTIME);
   });
+};
+
+const onClearButtonClick = () => {
+  clearDone();
+
   setTimeout(() => {
     donePlaceholderElement.classList.remove('hidden');
-  }, PLACEHOLDER_SHOWTIME);
+  }, REMOVE_SHOWTIME);
 };
 
 const setClearButtonsEvents = () => {

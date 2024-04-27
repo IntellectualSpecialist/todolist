@@ -1,10 +1,16 @@
 .list {
+  position: relative;
   margin: 0;
   padding: 0;
   list-style: none;
   max-height: 348px;
   overflow-x: hidden;
   overflow-y: auto;
+  scrollbar-width: thin;
+
+  &:has(.task-card--new) {
+    scrollbar-width: none;
+  }
 
   li {
     margin-bottom: 16px;
