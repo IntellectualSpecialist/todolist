@@ -13,7 +13,11 @@ const tasksFragment = document.createDocumentFragment();
 const scrollToLastTask = () => {
   const lastTaskElement = tasksListElement.querySelector('.tasks__item:last-child');
   if (lastTaskElement) {
-    lastTaskElement.scrollIntoView(false);
+    lastTaskElement.scrollIntoView({
+      behavior: 'smooth',
+      block: 'end',
+      inline: 'center'
+    });
   }
 };
 
