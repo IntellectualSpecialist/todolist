@@ -1,7 +1,3 @@
-import {onCheckChange} from './check-task.js';
-import {onRemoveButtonClick} from './remove-task.js';
-import {onInputChange} from './task-edit.js';
-
 const tasksListElement = document.querySelector('.tasks__list');
 const taskTemplateElement = document.querySelector('#new-task').content.querySelector('.tasks__item');
 const tasksPlaceholderElement = document.querySelector('#tasks-placeholder');
@@ -24,9 +20,6 @@ const renderTasks = (tasks) => {
   tasks.forEach((task) => {
     if (task.done === false) {
       const taskElement = taskTemplateElement.cloneNode(true);
-      const buttonCheckElement = taskElement.querySelector('.button-icon--check');
-      const buttonRemoveElement = taskElement.querySelector('.button-icon--bin');
-      const inputTaskElement = taskElement.querySelector('.task-card__text');
 
       taskElement.querySelector('.task-card__text').value = task.name;
       taskElement.dataset.id = task.id;
@@ -34,9 +27,6 @@ const renderTasks = (tasks) => {
       tasksFragment.append(taskElement);
 
       tasksPlaceholderElement.classList.add('hidden');
-      buttonCheckElement.addEventListener('change', onCheckChange);
-      buttonRemoveElement.addEventListener('click', onRemoveButtonClick);
-      inputTaskElement.addEventListener('change', onInputChange);
       taskCount += 1;
     } else {
       const doneElement = doneTemplateElement.cloneNode(true);

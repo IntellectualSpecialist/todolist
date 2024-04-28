@@ -3,7 +3,9 @@ import { renderTasks } from './render-all-tasks.js';
 
 const RENDER_SHOWTIME = 1500;
 const ANIMATION_SHOWTIME = 400;
+const ANIMATION_ADD_TIME = 100;
 const doneListElement = document.querySelector('.done__list');
+const taskListElement = document.querySelector('.tasks__list');
 const taskTemplateElement = document.querySelector('#done-task').content.querySelector('.done__item');
 const donePlaceholderElement = document.querySelector('#done-placeholder');
 const doneFragment = document.createDocumentFragment();
@@ -31,7 +33,7 @@ const renderFakeDone = (taskText) => {
   setTimeout(() => {
     const fakeTask = doneListElement.querySelector('.task-card--new');
     fakeTask.classList.add('task-card--show');
-  }, ANIMATION_SHOWTIME);
+  }, ANIMATION_ADD_TIME);
 };
 
 const changeTaskStatus = (task) => {
@@ -46,25 +48,29 @@ const changeTaskStatus = (task) => {
 };
 
 const onCheckChange = (evt) => {
-  const currentTask = evt.target.closest('.tasks__item');
-  const currentTaskLabel = currentTask.querySelector('.task-card__label');
-  const taskText = currentTask.querySelector('.task-card__text').value;
+  if (evt.target.matches('.button-icon--check')) {
+    const currentTask = evt.target.closest('.tasks__item');
+    const currentTaskLabel = currentTask.querySelector('.task-card__label');
+    const taskText = currentTask.querySelector('.task-card__text').value;
 
-  currentTask.classList.add('task-card--animation');
-  currentTaskLabel.classList.add('task-card__label--effect');
-  evt.target.disabled = true;
+    currentTask.classList.add('task-card--animation');
+    currentTaskLabel.classList.add('task-card__label--effect');
+    evt.target.disabled = true;
 
-  setTimeout(() => {
-    renderFakeDone(taskText);
-  }, ANIMATION_SHOWTIME);
+    setTimeout(() => {
+      renderFakeDone(taskText);
+    }, ANIMATION_SHOWTIME);
 
-  setTimeout(() => {
-    renderFakeDone(taskText);
-    changeTaskStatus(currentTask);
-    scrollToLastDone();
-    showTasksPlaceholder();
-  }, RENDER_SHOWTIME);
+    setTimeout(() => {
+      changeTaskStatus(currentTask);
+      scrollToLastDone();
+      showTasksPlaceholder();
+    }, RENDER_SHOWTIME);
+  }
 };
 
+const setCheckTaskEvent = () => {
+  taskListElement.addEventListener('change', onCheckChange);
+};
 
-export {onCheckChange};
+export {onCheckChange, setCheckTaskEvent};

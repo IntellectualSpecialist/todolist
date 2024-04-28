@@ -23,8 +23,8 @@ const onClearButtonClick = () => {
   }, REMOVE_SHOWTIME);
 };
 
-const setClearButtonsEvents = () => {
+const setClearButtonEvent = () => {
   clearButtonElement.addEventListener('click', onClearButtonClick);
 };
 
-export {setClearButtonsEvents};
+export {setClearButtonEvent};

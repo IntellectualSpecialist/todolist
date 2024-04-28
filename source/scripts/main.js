@@ -1,8 +1,14 @@
 import { loadTasks } from './utils.js';
 import {setFormEvents} from './add-task.js';
-import {setClearButtonsEvents} from './clear-done.js';
+import {setCheckTaskEvent} from './check-task.js';
+import {setTaskRemoveEvent} from './remove-task.js';
+import {setEditTaskEvent} from './task-edit.js';
+import {setClearButtonEvent} from './clear-done.js';
 
 loadTasks();
 setFormEvents();
-setClearButtonsEvents();
+setCheckTaskEvent();
+setTaskRemoveEvent();
+setEditTaskEvent();
+setClearButtonEvent();
 
