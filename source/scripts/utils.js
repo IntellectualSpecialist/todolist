@@ -49,4 +49,4 @@ const showTasksPlaceholder = () => {
   }
 };
 
-export {getTasks, createTask, showAlert, saveTasks, loadTasks, showTasksPlaceholder};
+export {getTasks, createTask, showAlert, saveTasks, loadTasks, showTasksPlaceholder, generateId};

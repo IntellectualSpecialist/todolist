@@ -1,4 +1,4 @@
-import { getTasks, saveTasks, showTasksPlaceholder } from './utils.js';
+import { getTasks, saveTasks, showTasksPlaceholder, generateId } from './utils.js';
 import { renderTasks } from './render-all-tasks.js';
 
 const RENDER_SHOWTIME = 1500;
@@ -36,13 +36,17 @@ const renderFakeDone = (taskText) => {
   }, ANIMATION_ADD_TIME);
 };
 
+const compareTasks = (taskA, taskB) => taskA.id - taskB.id;
+
 const changeTaskStatus = (task) => {
   const tasks = getTasks();
   tasks.forEach((element) => {
     if (element.id === parseInt(task.dataset.id, 10)) {
       element.done = true;
+      element.id = generateId();
     }
   });
+  tasks.sort(compareTasks);
   saveTasks(tasks);
   renderTasks(tasks);
 };
